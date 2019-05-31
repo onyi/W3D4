@@ -1,5 +1,7 @@
-      # t.integer :poll_id, null: false
 class Question < ApplicationRecord
+  validates: :text, presence: true
+  validates: :poll_id, presence: true
+
   belongs_to :poll,
     primary_key: :id,
     foreign_key: :poll_id,
@@ -11,3 +13,5 @@ class Question < ApplicationRecord
     class_name: :AnswerChoice
     
 end
+      # t.string :text, null: false
+      # t.integer :poll_id, null: false
